@@ -2,6 +2,9 @@
   "private": true,
   "type": "module",
   "license": "Apache-2.0",
+  "engines": {
+    "pnpm": "^12"
+  },
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
