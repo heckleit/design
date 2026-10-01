@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["es2025"],
+    "module": "nodenext",
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["*.ts"]
+}
