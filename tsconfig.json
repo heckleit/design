@@ -4,7 +4,8 @@
     "lib": ["es2025"],
     "module": "nodenext",
     "types": ["node"],
+    "rewriteRelativeImportExtensions": true,
     "noEmit": true
   },
-  "include": ["*.ts"]
+  "include": ["src", "scripts", "test", "*.ts"]
 }

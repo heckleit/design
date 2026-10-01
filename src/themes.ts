@@ -1,0 +1,138 @@
+import type { ColorName } from "./palette.ts";
+
+export interface Translucent {
+  color: ColorName;
+  percent: number;
+}
+
+export type RoleValue = ColorName | Translucent;
+
+export const roles = [
+  "page",
+  "band",
+  "surface",
+  "surface-muted",
+  "surface-muted-hover",
+  "surface-sunk",
+  "border",
+  "hairline",
+  "fg",
+  "fg-2",
+  "fg-3",
+  "fg-disabled",
+  "accent",
+  "accent-hover",
+  "accent-pressed",
+  "on-accent",
+  "accent-fg",
+  "accent-2",
+  "on-accent-2",
+  "inverse",
+  "on-inverse",
+  "night",
+  "on-night",
+  "on-night-2",
+  "live",
+  "new",
+  "on-new",
+  "success-bg",
+  "success-fg",
+  "danger",
+  "danger-hover",
+  "danger-pressed",
+  "on-danger",
+  "danger-fg",
+  "danger-bg",
+  "focus",
+] as const;
+
+export type Role = (typeof roles)[number];
+
+export interface Theme {
+  colors: Record<Role, RoleValue>;
+  shadow: Translucent;
+}
+
+export const light = {
+  colors: {
+    page: "apricot-50",
+    band: "apricot-100",
+    surface: "apricot-25",
+    "surface-muted": "apricot-100",
+    "surface-muted-hover": "apricot-200",
+    "surface-sunk": "apricot-50",
+    border: "apricot-200",
+    hairline: { color: "plum-900", percent: 10 },
+    fg: "plum-900",
+    "fg-2": "plum-700",
+    "fg-3": "plum-600",
+    "fg-disabled": "plum-500",
+    accent: "apricot-300",
+    "accent-hover": "apricot-400",
+    "accent-pressed": "apricot-500",
+    "on-accent": "plum-900",
+    "accent-fg": "apricot-700",
+    "accent-2": "sunshine-200",
+    "on-accent-2": "plum-900",
+    inverse: "plum-900",
+    "on-inverse": "apricot-50",
+    night: "plum-900",
+    "on-night": "apricot-50",
+    "on-night-2": "plum-300",
+    live: "onair-400",
+    new: "sunshine-200",
+    "on-new": "plum-900",
+    "success-bg": "green-100",
+    "success-fg": "green-700",
+    danger: "red-600",
+    "danger-hover": "red-700",
+    "danger-pressed": "red-800",
+    "on-danger": "white",
+    "danger-fg": "red-700",
+    "danger-bg": "red-50",
+    focus: "apricot-600",
+  },
+  shadow: { color: "plum-900", percent: 22 },
+} as const satisfies Theme;
+
+export const dark = {
+  colors: {
+    page: "plum-900",
+    band: "plum-850",
+    surface: "plum-850",
+    "surface-muted": "plum-800",
+    "surface-muted-hover": "plum-700",
+    "surface-sunk": "plum-950",
+    border: "plum-700",
+    hairline: { color: "apricot-50", percent: 10 },
+    fg: "apricot-50",
+    "fg-2": "plum-200",
+    "fg-3": "plum-300",
+    "fg-disabled": "plum-400",
+    accent: "apricot-300",
+    "accent-hover": "apricot-200",
+    "accent-pressed": "apricot-400",
+    "on-accent": "plum-900",
+    "accent-fg": "apricot-300",
+    "accent-2": "sunshine-200",
+    "on-accent-2": "plum-900",
+    inverse: "apricot-50",
+    "on-inverse": "plum-900",
+    night: "plum-950",
+    "on-night": "apricot-50",
+    "on-night-2": "plum-400",
+    live: "onair-400",
+    new: "sunshine-200",
+    "on-new": "plum-900",
+    "success-bg": "green-900",
+    "success-fg": "green-300",
+    danger: "red-600",
+    "danger-hover": "red-700",
+    "danger-pressed": "red-800",
+    "on-danger": "white",
+    "danger-fg": "red-300",
+    "danger-bg": "red-950",
+    focus: "sunshine-200",
+  },
+  shadow: { color: "plum-950", percent: 70 },
+} as const satisfies Theme;
