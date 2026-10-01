@@ -6,9 +6,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
+    "lint:workflows": "actionlint && zizmor .github",
     "typecheck": "tsc && pnpm --recursive --if-present run typecheck",
     "test": "vitest run",
-    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test"
+    "build": "pnpm --recursive --if-present run build",
+    "check": "pnpm format:check && pnpm lint && pnpm lint:workflows && pnpm typecheck && pnpm test && pnpm build"
   },
   "prettier": {},
   "devDependencies": {
