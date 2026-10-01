@@ -1,6 +1,6 @@
 {
   "name": "@heckle-it/design",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Colours, type, shape and motion for Heckle, as TypeScript values and a Tailwind CSS theme",
   "license": "Apache-2.0",
   "homepage": "https://heckle.it",
